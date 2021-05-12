@@ -1,23 +1,33 @@
 package entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "student")
-public class Student {
+public class Student implements Serializable {
+
+	private static final long serialVersionUID = -8336008642458065547L;
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id")
 	private int id;
 
 	@Id
 	@Column(name = "first_name")
 	private String firstName;
+
 	@Id
 	@Column(name = "last_name")
 	private String lastName;
+
 	@Id
 	@Column(name = "email")
 	private String email;

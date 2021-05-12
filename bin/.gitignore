@@ -1,1 +1,4 @@
-.class
+/demo/
+/entity/
+/hibernate.cfg.xml
+/jdbc/
