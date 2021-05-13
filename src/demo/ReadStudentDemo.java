@@ -17,14 +17,17 @@ public class ReadStudentDemo {
 		try {
 			session.beginTransaction();
 			// query Students
-			List<Student> listOfStudents = session.createQuery("from Student").getResultList();
+			List<Student> listOfStudents = session.createQuery("FROM Student").getResultList();
 
 			// display the students
 
 			printStudents(listOfStudents);
 			System.out.println("**********");
 			// query students: firstName = 'David'
-			listOfStudents = session.createQuery("from Student s where s.firstName='David'").getResultList();
+			listOfStudents = session.createQuery("FROM Student s WHERE s.firstName='David'").getResultList();
+			printStudents(listOfStudents);
+
+			listOfStudents = session.createQuery("FROM Student s WHERE s.email LIKE '%com'").getResultList();
 			printStudents(listOfStudents);
 
 			session.getTransaction().commit();
