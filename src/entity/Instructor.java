@@ -29,7 +29,7 @@ public class Instructor {
 
 	@OneToOne
 	@JoinColumn(name = "instructor_detail_id")
-	private int instructorDetail;
+	private InstructorDetail instructorDetail;
 
 	public int getId() {
 		return id;
@@ -63,11 +63,11 @@ public class Instructor {
 		this.email = email;
 	}
 
-	public int getInstructorDetail() {
+	public InstructorDetail getInstructorDetail() {
 		return instructorDetail;
 	}
 
-	public void setInstructorDetail(int instructorDetail) {
+	public void setInstructorDetail(InstructorDetail instructorDetail) {
 		this.instructorDetail = instructorDetail;
 	}
 
